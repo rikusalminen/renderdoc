@@ -926,6 +926,37 @@ enum class VulkanChunk : uint32_t
   vkCmdSetFragmentShadingRateKHR,
   vkSetDeviceMemoryPriorityEXT,
   vkCmdSetAttachmentFeedbackLoopEnableEXT,
+  vkCmdSetTessellationDomainOriginEXT,
+  vkCmdSetDepthClampEnableEXT,
+  vkCmdSetPolygonModeEXT,
+  vkCmdSetRasterizationSamplesEXT,
+  vkCmdSetSampleMaskEXT,
+  vkCmdSetAlphaToCoverageEnableEXT,
+  vkCmdSetAlphaToOneEnableEXT,
+  vkCmdSetLogicOpEnableEXT,
+  vkCmdSetColorBlendEnableEXT,
+  vkCmdSetColorBlendEquationEXT,
+  vkCmdSetColorWriteMaskEXT,
+  vkCmdSetRasterizationStreamEXT,
+  vkCmdSetConservativeRasterizationModeEXT,
+  vkCmdSetExtraPrimitiveOverestimationSizeEXT,
+  vkCmdSetDepthClipEnableEXT,
+  vkCmdSetSampleLocationsEnableEXT,
+  vkCmdSetColorBlendAdvancedEXT,
+  vkCmdSetProvokingVertexModeEXT,
+  vkCmdSetLineRasterizationModeEXT,
+  vkCmdSetLineStippleEnableEXT,
+  vkCmdSetDepthClipNegativeOneToOneEXT,
+  vkCmdSetViewportWScalingEnableNV,
+  vkCmdSetViewportSwizzleNV,
+  vkCmdSetCoverageToColorEnableNV,
+  vkCmdSetCoverageToColorLocationNV,
+  vkCmdSetCoverageModulationModeNV,
+  vkCmdSetCoverageModulationTableEnableNV,
+  vkCmdSetCoverageModulationTableNV,
+  vkCmdSetShadingRateImageEnableNV,
+  vkCmdSetRepresentativeFragmentTestEnableNV,
+  vkCmdSetCoverageReductionModeNV,
   Max,
 };
 
@@ -1154,6 +1185,8 @@ DECLARE_REFLECTION_STRUCT(VkPhysicalDeviceDescriptorIndexingProperties)
 DECLARE_REFLECTION_STRUCT(VkPhysicalDeviceDiscardRectanglePropertiesEXT);
 DECLARE_REFLECTION_STRUCT(VkPhysicalDeviceDriverProperties);
 DECLARE_REFLECTION_STRUCT(VkPhysicalDeviceDynamicRenderingFeatures);
+DECLARE_REFLECTION_STRUCT(VkPhysicalDeviceExtendedDynamicState3FeaturesEXT);
+DECLARE_REFLECTION_STRUCT(VkPhysicalDeviceExtendedDynamicState3PropertiesEXT);
 DECLARE_REFLECTION_STRUCT(VkPhysicalDeviceExtendedDynamicState2FeaturesEXT);
 DECLARE_REFLECTION_STRUCT(VkPhysicalDeviceExtendedDynamicStateFeaturesEXT);
 DECLARE_REFLECTION_STRUCT(VkPhysicalDeviceExternalBufferInfo);
@@ -1562,6 +1595,8 @@ DECLARE_DESERIALISE_TYPE(VkPhysicalDeviceDescriptorIndexingProperties)
 DECLARE_DESERIALISE_TYPE(VkPhysicalDeviceDiscardRectanglePropertiesEXT);
 DECLARE_DESERIALISE_TYPE(VkPhysicalDeviceDriverProperties);
 DECLARE_DESERIALISE_TYPE(VkPhysicalDeviceDynamicRenderingFeatures);
+DECLARE_DESERIALISE_TYPE(VkPhysicalDeviceExtendedDynamicState3FeaturesEXT);
+DECLARE_DESERIALISE_TYPE(VkPhysicalDeviceExtendedDynamicState3PropertiesEXT);
 DECLARE_DESERIALISE_TYPE(VkPhysicalDeviceExtendedDynamicState2FeaturesEXT);
 DECLARE_DESERIALISE_TYPE(VkPhysicalDeviceExtendedDynamicStateFeaturesEXT);
 DECLARE_DESERIALISE_TYPE(VkPhysicalDeviceExternalBufferInfo);

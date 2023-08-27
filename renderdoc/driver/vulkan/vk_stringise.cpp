@@ -28,7 +28,7 @@
 template <>
 rdcstr DoStringise(const VulkanChunk &el)
 {
-  RDCCOMPILE_ASSERT((uint32_t)VulkanChunk::Max == 1178, "Chunks changed without updating names");
+  RDCCOMPILE_ASSERT((uint32_t)VulkanChunk::Max == 1209, "Chunks changed without updating names");
 
   BEGIN_ENUM_STRINGISE(VulkanChunk)
   {
@@ -210,6 +210,37 @@ rdcstr DoStringise(const VulkanChunk &el)
     STRINGISE_ENUM_CLASS(vkCmdSetFragmentShadingRateKHR)
     STRINGISE_ENUM_CLASS(vkSetDeviceMemoryPriorityEXT)
     STRINGISE_ENUM_CLASS(vkCmdSetAttachmentFeedbackLoopEnableEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetTessellationDomainOriginEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetDepthClampEnableEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetPolygonModeEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetRasterizationSamplesEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetSampleMaskEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetAlphaToCoverageEnableEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetAlphaToOneEnableEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetLogicOpEnableEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetColorBlendEnableEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetColorBlendEquationEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetColorWriteMaskEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetRasterizationStreamEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetConservativeRasterizationModeEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetExtraPrimitiveOverestimationSizeEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetDepthClipEnableEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetSampleLocationsEnableEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetColorBlendAdvancedEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetProvokingVertexModeEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetLineRasterizationModeEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetLineStippleEnableEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetDepthClipNegativeOneToOneEXT)
+    STRINGISE_ENUM_CLASS(vkCmdSetViewportWScalingEnableNV)
+    STRINGISE_ENUM_CLASS(vkCmdSetViewportSwizzleNV)
+    STRINGISE_ENUM_CLASS(vkCmdSetCoverageToColorEnableNV)
+    STRINGISE_ENUM_CLASS(vkCmdSetCoverageToColorLocationNV)
+    STRINGISE_ENUM_CLASS(vkCmdSetCoverageModulationModeNV)
+    STRINGISE_ENUM_CLASS(vkCmdSetCoverageModulationTableEnableNV)
+    STRINGISE_ENUM_CLASS(vkCmdSetCoverageModulationTableNV)
+    STRINGISE_ENUM_CLASS(vkCmdSetShadingRateImageEnableNV)
+    STRINGISE_ENUM_CLASS(vkCmdSetRepresentativeFragmentTestEnableNV)
+    STRINGISE_ENUM_CLASS(vkCmdSetCoverageReductionModeNV)
     STRINGISE_ENUM_CLASS_NAMED(Max, "Max Chunk");
   }
   END_ENUM_STRINGISE()

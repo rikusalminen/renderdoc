@@ -6219,6 +6219,68 @@ void Deserialise(const VkPhysicalDeviceExtendedDynamicState2FeaturesEXT &el)
 }
 
 template <typename SerialiserType>
+void DoSerialise(SerialiserType &ser, VkPhysicalDeviceExtendedDynamicState3FeaturesEXT &el)
+{
+  RDCASSERT(ser.IsReading() ||
+            el.sType == VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_3_FEATURES_EXT);
+  SerialiseNext(ser, el.sType, el.pNext);
+
+  SERIALISE_MEMBER(extendedDynamicState3TessellationDomainOrigin);
+  SERIALISE_MEMBER(extendedDynamicState3DepthClampEnable);
+  SERIALISE_MEMBER(extendedDynamicState3PolygonMode);
+  SERIALISE_MEMBER(extendedDynamicState3RasterizationSamples);
+  SERIALISE_MEMBER(extendedDynamicState3SampleMask);
+  SERIALISE_MEMBER(extendedDynamicState3AlphaToCoverageEnable);
+  SERIALISE_MEMBER(extendedDynamicState3AlphaToOneEnable);
+  SERIALISE_MEMBER(extendedDynamicState3LogicOpEnable);
+  SERIALISE_MEMBER(extendedDynamicState3ColorBlendEnable);
+  SERIALISE_MEMBER(extendedDynamicState3ColorBlendEquation);
+  SERIALISE_MEMBER(extendedDynamicState3ColorWriteMask);
+  SERIALISE_MEMBER(extendedDynamicState3RasterizationStream);
+  SERIALISE_MEMBER(extendedDynamicState3ConservativeRasterizationMode);
+  SERIALISE_MEMBER(extendedDynamicState3ExtraPrimitiveOverestimationSize);
+  SERIALISE_MEMBER(extendedDynamicState3DepthClipEnable);
+  SERIALISE_MEMBER(extendedDynamicState3SampleLocationsEnable);
+  SERIALISE_MEMBER(extendedDynamicState3ColorBlendAdvanced);
+  SERIALISE_MEMBER(extendedDynamicState3ProvokingVertexMode);
+  SERIALISE_MEMBER(extendedDynamicState3LineRasterizationMode);
+  SERIALISE_MEMBER(extendedDynamicState3LineStippleEnable);
+  SERIALISE_MEMBER(extendedDynamicState3DepthClipNegativeOneToOne);
+  SERIALISE_MEMBER(extendedDynamicState3ViewportWScalingEnable);
+  SERIALISE_MEMBER(extendedDynamicState3ViewportSwizzle);
+  SERIALISE_MEMBER(extendedDynamicState3CoverageToColorEnable);
+  SERIALISE_MEMBER(extendedDynamicState3CoverageToColorLocation);
+  SERIALISE_MEMBER(extendedDynamicState3CoverageModulationMode);
+  SERIALISE_MEMBER(extendedDynamicState3CoverageModulationTableEnable);
+  SERIALISE_MEMBER(extendedDynamicState3CoverageModulationTable);
+  SERIALISE_MEMBER(extendedDynamicState3CoverageReductionMode);
+  SERIALISE_MEMBER(extendedDynamicState3RepresentativeFragmentTestEnable);
+  SERIALISE_MEMBER(extendedDynamicState3ShadingRateImageEnable);
+}
+
+template <>
+void Deserialise(const VkPhysicalDeviceExtendedDynamicState3FeaturesEXT &el)
+{
+  DeserialiseNext(el.pNext);
+}
+
+template <typename SerialiserType>
+void DoSerialise(SerialiserType &ser, VkPhysicalDeviceExtendedDynamicState3PropertiesEXT &el)
+{
+  RDCASSERT(ser.IsReading() ||
+            el.sType == VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_3_PROPERTIES_EXT);
+  SerialiseNext(ser, el.sType, el.pNext);
+
+  SERIALISE_MEMBER(dynamicPrimitiveTopologyUnrestricted);
+}
+
+template <>
+void Deserialise(const VkPhysicalDeviceExtendedDynamicState3PropertiesEXT &el)
+{
+  DeserialiseNext(el.pNext);
+}
+
+template <typename SerialiserType>
 void DoSerialise(SerialiserType &ser, VkPhysicalDeviceFragmentDensityMapFeaturesEXT &el)
 {
   RDCASSERT(ser.IsReading() ||
