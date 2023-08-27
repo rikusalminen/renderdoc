@@ -506,6 +506,8 @@ void VulkanRenderState::BindPipeline(WrappedVulkan *vk, VkCommandBuffer cmd,
                                          vertexAttributes.data());
     }
 
+    // TODO: add VK_EXT_extended_dynamic_state3 here
+
     bool dynamicStride =
         dynamicStates[VkDynamicVertexInputBindingStride] && vk->ExtendedDynamicState();
 
