@@ -540,6 +540,7 @@
   DeclExt(KHR_maintenance4);                          \
   DeclExt(EXT_color_write_enable);                    \
   DeclExt(EXT_extended_dynamic_state2);               \
+  DeclExt(EXT_extended_dynamic_state3);               \
   DeclExt(EXT_multisampled_render_to_single_sampled); \
   DeclExt(EXT_vertex_input_dynamic_state);            \
   DeclExt(KHR_dynamic_rendering);                     \
@@ -659,6 +660,7 @@
   CheckExt(KHR_maintenance4, VK13);                          \
   CheckExt(EXT_color_write_enable, VKXX);                    \
   CheckExt(EXT_extended_dynamic_state2, VK13);               \
+  CheckExt(EXT_extended_dynamic_state3, VKXX);               \
   CheckExt(EXT_multisampled_render_to_single_sampled, VKXX); \
   CheckExt(EXT_vertex_input_dynamic_state, VKXX);            \
   CheckExt(KHR_dynamic_rendering, VK13);                     \
@@ -923,6 +925,37 @@
   HookInitExtension(EXT_extended_dynamic_state2, CmdSetPatchControlPointsEXT);                     \
   HookInitPromotedExtension(EXT_extended_dynamic_state2, CmdSetPrimitiveRestartEnable, EXT);       \
   HookInitPromotedExtension(EXT_extended_dynamic_state2, CmdSetRasterizerDiscardEnable, EXT);      \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetTessellationDomainOriginEXT);               \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetDepthClampEnableEXT);                       \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetPolygonModeEXT);                            \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetRasterizationSamplesEXT);                   \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetSampleMaskEXT);                             \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetAlphaToCoverageEnableEXT);                  \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetAlphaToOneEnableEXT);                       \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetLogicOpEnableEXT);                          \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetColorBlendEnableEXT);                       \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetColorBlendEquationEXT);                     \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetColorWriteMaskEXT);                         \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetRasterizationStreamEXT);                    \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetConservativeRasterizationModeEXT);          \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetExtraPrimitiveOverestimationSizeEXT);       \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetDepthClipEnableEXT);                        \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetSampleLocationsEnableEXT);                  \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetColorBlendAdvancedEXT);                     \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetProvokingVertexModeEXT);                    \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetLineRasterizationModeEXT);                  \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetLineStippleEnableEXT);                      \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetDepthClipNegativeOneToOneEXT);              \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetViewportWScalingEnableNV);                  \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetViewportSwizzleNV);                         \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetCoverageToColorEnableNV);                   \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetCoverageToColorLocationNV);                 \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetCoverageModulationModeNV);                  \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetCoverageModulationTableEnableNV);           \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetCoverageModulationTableNV);                 \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetShadingRateImageEnableNV);                  \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetRepresentativeFragmentTestEnableNV);        \
+  HookInitExtension(EXT_extended_dynamic_state3, CmdSetCoverageReductionModeNV);                   \
   HookInitExtension(EXT_vertex_input_dynamic_state, CmdSetVertexInputEXT);                         \
   HookInitPromotedExtension(KHR_dynamic_rendering, CmdBeginRendering, KHR);                        \
   HookInitPromotedExtension(KHR_dynamic_rendering, CmdEndRendering, KHR);                          \
@@ -1636,6 +1669,38 @@
               primitiveRestartEnable);                                                               \
   HookDefine2(void, vkCmdSetRasterizerDiscardEnable, VkCommandBuffer, commandBuffer, VkBool32,       \
               rasterizerDiscardEnable);                                                              \
+  /* VK_EXT_extended_dynamic_state3 */                                                               \
+  HookDefine2(void, vkCmdSetTessellationDomainOriginEXT, VkCommandBuffer, commandBuffer, VkTessellationDomainOrigin, domainOrigin); \
+  HookDefine2(void, vkCmdSetDepthClampEnableEXT, VkCommandBuffer, commandBuffer, VkBool32, depthClampEnable); \
+  HookDefine2(void, vkCmdSetPolygonModeEXT, VkCommandBuffer, commandBuffer, VkPolygonMode, polygonMode); \
+  HookDefine2(void, vkCmdSetRasterizationSamplesEXT, VkCommandBuffer, commandBuffer, VkSampleCountFlagBits , rasterizationSamples); \
+  HookDefine3(void, vkCmdSetSampleMaskEXT, VkCommandBuffer, commandBuffer, VkSampleCountFlagBits , samples, const VkSampleMask*   , pSampleMask); \
+  HookDefine2(void, vkCmdSetAlphaToCoverageEnableEXT, VkCommandBuffer, commandBuffer, VkBool32, alphaToCoverageEnable); \
+  HookDefine2(void, vkCmdSetAlphaToOneEnableEXT, VkCommandBuffer, commandBuffer, VkBool32, alphaToOneEnable); \
+  HookDefine2(void, vkCmdSetLogicOpEnableEXT, VkCommandBuffer, commandBuffer, VkBool32, logicOpEnable); \
+  HookDefine4(void, vkCmdSetColorBlendEnableEXT, VkCommandBuffer, commandBuffer, uint32_t, firstAttachment, uint32_t, attachmentCount, const VkBool32*, pColorBlendEnables); \
+  HookDefine4(void, vkCmdSetColorBlendEquationEXT, VkCommandBuffer, commandBuffer, uint32_t, firstAttachment, uint32_t, attachmentCount, const VkColorBlendEquationEXT*, pColorBlendEquations); \
+  HookDefine4(void, vkCmdSetColorWriteMaskEXT, VkCommandBuffer, commandBuffer, uint32_t, firstAttachment, uint32_t, attachmentCount, const VkColorComponentFlags*, pColorWriteMasks); \
+  HookDefine2(void, vkCmdSetRasterizationStreamEXT, VkCommandBuffer, commandBuffer, uint32_t, rasterizationStream); \
+  HookDefine2(void, vkCmdSetConservativeRasterizationModeEXT, VkCommandBuffer, commandBuffer, VkConservativeRasterizationModeEXT, conservativeRasterizationMode); \
+  HookDefine2(void, vkCmdSetExtraPrimitiveOverestimationSizeEXT, VkCommandBuffer, commandBuffer, float, extraPrimitiveOverestimationSize); \
+  HookDefine2(void, vkCmdSetDepthClipEnableEXT, VkCommandBuffer, commandBuffer, VkBool32, depthClipEnable); \
+  HookDefine2(void, vkCmdSetSampleLocationsEnableEXT, VkCommandBuffer, commandBuffer, VkBool32, sampleLocationsEnable); \
+  HookDefine4(void, vkCmdSetColorBlendAdvancedEXT, VkCommandBuffer, commandBuffer, uint32_t, firstAttachment, uint32_t, attachmentCount, const VkColorBlendAdvancedEXT*, pColorBlendAdvanced); \
+  HookDefine2(void, vkCmdSetProvokingVertexModeEXT, VkCommandBuffer, commandBuffer, VkProvokingVertexModeEXT, provokingVertexMode); \
+  HookDefine2(void, vkCmdSetLineRasterizationModeEXT, VkCommandBuffer, commandBuffer, VkLineRasterizationModeEXT, lineRasterizationMode); \
+  HookDefine2(void, vkCmdSetLineStippleEnableEXT, VkCommandBuffer, commandBuffer, VkBool32, stippledLineEnable); \
+  HookDefine2(void, vkCmdSetDepthClipNegativeOneToOneEXT, VkCommandBuffer, commandBuffer, VkBool32, negativeOneToOne); \
+  HookDefine2(void, vkCmdSetViewportWScalingEnableNV, VkCommandBuffer, commandBuffer, VkBool32, viewportWScalingEnable); \
+  HookDefine4(void, vkCmdSetViewportSwizzleNV, VkCommandBuffer, commandBuffer, uint32_t, firstViewport, uint32_t, viewportCount, const VkViewportSwizzleNV*, pViewportSwizzles); \
+  HookDefine2(void, vkCmdSetCoverageToColorEnableNV, VkCommandBuffer, commandBuffer, VkBool32, coverageToColorEnable); \
+  HookDefine2(void, vkCmdSetCoverageToColorLocationNV, VkCommandBuffer, commandBuffer, uint32_t, coverageToColorLocation); \
+  HookDefine2(void, vkCmdSetCoverageModulationModeNV, VkCommandBuffer, commandBuffer, VkCoverageModulationModeNV, coverageModulationMode); \
+  HookDefine2(void, vkCmdSetCoverageModulationTableEnableNV, VkCommandBuffer, commandBuffer, VkBool32, coverageModulationTableEnable); \
+  HookDefine3(void, vkCmdSetCoverageModulationTableNV, VkCommandBuffer, commandBuffer, uint32_t, coverageModulationTableCount, const float*, pCoverageModulationTable); \
+  HookDefine2(void, vkCmdSetShadingRateImageEnableNV, VkCommandBuffer, commandBuffer, VkBool32, shadingRateImageEnable); \
+  HookDefine2(void, vkCmdSetRepresentativeFragmentTestEnableNV, VkCommandBuffer, commandBuffer, VkBool32, representativeFragmentTestEnable); \
+  HookDefine2(void, vkCmdSetCoverageReductionModeNV, VkCommandBuffer, commandBuffer, VkCoverageReductionModeNV, coverageReductionMode); \
   HookDefine5(void, vkCmdSetVertexInputEXT, VkCommandBuffer, commandBuffer, uint32_t,                \
               vertexBindingDescriptionCount, const VkVertexInputBindingDescription2EXT *,            \
               pVertexBindingDescriptions, uint32_t, vertexAttributeDescriptionCount,                 \
