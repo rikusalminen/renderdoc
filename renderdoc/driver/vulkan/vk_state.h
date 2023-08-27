@@ -212,6 +212,41 @@ struct VulkanRenderState
   VkBool32 primRestartEnable = VK_FALSE;
   VkBool32 rastDiscardEnable = VK_FALSE;
 
+  // extended dynamic state 3
+  VkTessellationDomainOrigin domainOrigin = VK_TESSELLATION_DOMAIN_ORIGIN_UPPER_LEFT;
+  VkBool32 depthClampEnable = VK_FALSE;
+  VkPolygonMode polygonMode = VK_POLYGON_MODE_FILL;
+  VkSampleCountFlagBits rasterizationSamples = VK_SAMPLE_COUNT_1_BIT;
+  VkSampleCountFlagBits sampleMask_samples = VK_SAMPLE_COUNT_1_BIT; // TODO: is this redundant?
+  rdcarray<VkSampleMask> pSampleMask;
+  VkBool32 alphaToCoverageEnable = VK_FALSE;
+  VkBool32 alphaToOneEnable = VK_FALSE;
+  VkBool32 logicOpEnable = VK_FALSE;
+  rdcarray<VkBool32> pColorBlendEnables;
+  rdcarray<VkColorBlendEquationEXT> pColorBlendEquations;
+  rdcarray<VkColorComponentFlags> pColorWriteMasks;
+  uint32_t rasterizationStream = 0;
+  VkConservativeRasterizationModeEXT conservativeRasterizationMode =
+    VK_CONSERVATIVE_RASTERIZATION_MODE_DISABLED_EXT;
+  float extraPrimitiveOverestimationSize = VK_FALSE;
+  VkBool32 depthClipEnable = VK_FALSE;
+  VkBool32 sampleLocationsEnable = VK_FALSE;
+  rdcarray<VkColorBlendAdvancedEXT> pColorBlendAdvanced;
+  VkProvokingVertexModeEXT provokingVertexMode = VK_PROVOKING_VERTEX_MODE_FIRST_VERTEX_EXT;
+  VkLineRasterizationModeEXT lineRasterizationMode = VK_LINE_RASTERIZATION_MODE_DEFAULT_EXT;
+  VkBool32 stippledLineEnable = VK_FALSE;
+  VkBool32 negativeOneToOne = VK_FALSE;
+  VkBool32 viewportWScalingEnable = VK_FALSE;
+  rdcarray<VkViewportSwizzleNV> pViewportSwizzles;
+  VkBool32 coverageToColorEnable = VK_FALSE;
+  uint32_t coverageToColorLocation = 0;
+  VkCoverageModulationModeNV coverageModulationMode = VK_COVERAGE_MODULATION_MODE_NONE_NV;
+  VkBool32 coverageModulationTableEnable = VK_FALSE;
+  rdcarray<float> pCoverageModulationTable;
+  VkBool32 shadingRateImageEnable = VK_FALSE;
+  VkBool32 representativeFragmentTestEnable = VK_FALSE;
+  VkCoverageReductionModeNV coverageReductionMode = VK_COVERAGE_REDUCTION_MODE_MERGE_NV;
+
   // dynamic vertex input
   rdcarray<VkVertexInputBindingDescription2EXT> vertexBindings;
   rdcarray<VkVertexInputAttributeDescription2EXT> vertexAttributes;

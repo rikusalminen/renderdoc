@@ -2986,6 +2986,8 @@ bool WrappedVulkan::Serialise_vkCreateDevice(SerialiserType &ser, VkPhysicalDevi
       }
       END_PHYS_EXT_CHECK();
 
+      // TODO: add VK_EXT_extended_dynamic_state3 here!
+
       BEGIN_PHYS_EXT_CHECK(VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT,
                            VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_INPUT_DYNAMIC_STATE_FEATURES_EXT);
       {

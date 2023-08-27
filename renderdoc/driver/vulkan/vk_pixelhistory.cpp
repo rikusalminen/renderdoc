@@ -733,6 +733,7 @@ protected:
     m_DynamicStates.removeOne(VK_DYNAMIC_STATE_COLOR_WRITE_MASK_EXT);
     m_DynamicStates.removeOne(VK_DYNAMIC_STATE_COLOR_BLEND_ENABLE_EXT);
     m_DynamicStates.removeOne(VK_DYNAMIC_STATE_COLOR_BLEND_EQUATION_EXT);
+    // TODO: add VK_EXT_extended_dynamic_state3 here
 
     if(disableTests)
     {

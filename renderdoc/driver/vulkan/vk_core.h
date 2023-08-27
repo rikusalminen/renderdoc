@@ -444,6 +444,40 @@ private:
   bool m_ExtendedDynState2 = false;
   bool m_ExtendedDynState2Logic = false;
   bool m_ExtendedDynState2CPs = false;
+  // TODO: add extended dynamic state3 here
+  /*
+    VkBool32           extendedDynamicState3TessellationDomainOrigin;
+    VkBool32           extendedDynamicState3DepthClampEnable;
+    VkBool32           extendedDynamicState3PolygonMode;
+    VkBool32           extendedDynamicState3RasterizationSamples;
+    VkBool32           extendedDynamicState3SampleMask;
+    VkBool32           extendedDynamicState3AlphaToCoverageEnable;
+    VkBool32           extendedDynamicState3AlphaToOneEnable;
+    VkBool32           extendedDynamicState3LogicOpEnable;
+    VkBool32           extendedDynamicState3ColorBlendEnable;
+    VkBool32           extendedDynamicState3ColorBlendEquation;
+    VkBool32           extendedDynamicState3ColorWriteMask;
+    VkBool32           extendedDynamicState3RasterizationStream;
+    VkBool32           extendedDynamicState3ConservativeRasterizationMode;
+    VkBool32           extendedDynamicState3ExtraPrimitiveOverestimationSize;
+    VkBool32           extendedDynamicState3DepthClipEnable;
+    VkBool32           extendedDynamicState3SampleLocationsEnable;
+    VkBool32           extendedDynamicState3ColorBlendAdvanced;
+    VkBool32           extendedDynamicState3ProvokingVertexMode;
+    VkBool32           extendedDynamicState3LineRasterizationMode;
+    VkBool32           extendedDynamicState3LineStippleEnable;
+    VkBool32           extendedDynamicState3DepthClipNegativeOneToOne;
+    VkBool32           extendedDynamicState3ViewportWScalingEnable;
+    VkBool32           extendedDynamicState3ViewportSwizzle;
+    VkBool32           extendedDynamicState3CoverageToColorEnable;
+    VkBool32           extendedDynamicState3CoverageToColorLocation;
+    VkBool32           extendedDynamicState3CoverageModulationMode;
+    VkBool32           extendedDynamicState3CoverageModulationTableEnable;
+    VkBool32           extendedDynamicState3CoverageModulationTable;
+    VkBool32           extendedDynamicState3CoverageReductionMode;
+    VkBool32           extendedDynamicState3RepresentativeFragmentTestEnable;
+    VkBool32           extendedDynamicState3ShadingRateImageEnable;
+  */
   bool m_FragmentShadingRate = false;
   bool m_DynColorWrite = false;
   bool m_DynVertexInput = false;
@@ -1218,6 +1252,40 @@ public:
   bool ExtendedDynamicState2() const { return m_ExtendedDynState2; }
   bool ExtendedDynamicState2Logic() const { return m_ExtendedDynState2Logic; }
   bool ExtendedDynamicState2CPs() const { return m_ExtendedDynState2CPs; }
+  // TODO: add extended dynamic state3 here
+  /*
+    VkBool32           extendedDynamicState3TessellationDomainOrigin;
+    VkBool32           extendedDynamicState3DepthClampEnable;
+    VkBool32           extendedDynamicState3PolygonMode;
+    VkBool32           extendedDynamicState3RasterizationSamples;
+    VkBool32           extendedDynamicState3SampleMask;
+    VkBool32           extendedDynamicState3AlphaToCoverageEnable;
+    VkBool32           extendedDynamicState3AlphaToOneEnable;
+    VkBool32           extendedDynamicState3LogicOpEnable;
+    VkBool32           extendedDynamicState3ColorBlendEnable;
+    VkBool32           extendedDynamicState3ColorBlendEquation;
+    VkBool32           extendedDynamicState3ColorWriteMask;
+    VkBool32           extendedDynamicState3RasterizationStream;
+    VkBool32           extendedDynamicState3ConservativeRasterizationMode;
+    VkBool32           extendedDynamicState3ExtraPrimitiveOverestimationSize;
+    VkBool32           extendedDynamicState3DepthClipEnable;
+    VkBool32           extendedDynamicState3SampleLocationsEnable;
+    VkBool32           extendedDynamicState3ColorBlendAdvanced;
+    VkBool32           extendedDynamicState3ProvokingVertexMode;
+    VkBool32           extendedDynamicState3LineRasterizationMode;
+    VkBool32           extendedDynamicState3LineStippleEnable;
+    VkBool32           extendedDynamicState3DepthClipNegativeOneToOne;
+    VkBool32           extendedDynamicState3ViewportWScalingEnable;
+    VkBool32           extendedDynamicState3ViewportSwizzle;
+    VkBool32           extendedDynamicState3CoverageToColorEnable;
+    VkBool32           extendedDynamicState3CoverageToColorLocation;
+    VkBool32           extendedDynamicState3CoverageModulationMode;
+    VkBool32           extendedDynamicState3CoverageModulationTableEnable;
+    VkBool32           extendedDynamicState3CoverageModulationTable;
+    VkBool32           extendedDynamicState3CoverageReductionMode;
+    VkBool32           extendedDynamicState3RepresentativeFragmentTestEnable;
+    VkBool32           extendedDynamicState3ShadingRateImageEnable;
+  */
   bool FragmentShadingRate() const { return m_FragmentShadingRate; }
   bool DynamicColorWrite() const { return m_DynColorWrite; }
   bool DynamicVertexInput() const { return m_DynVertexInput; }
@@ -2618,6 +2686,71 @@ public:
                                 VkBool32 primitiveRestartEnable);
   IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetRasterizerDiscardEnable,
                                 VkCommandBuffer commandBuffer, VkBool32 rasterizerDiscardEnable);
+
+  // VK_EXT_extended_dynamic_state3
+
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetTessellationDomainOriginEXT,
+      VkCommandBuffer commandBuffer, VkTessellationDomainOrigin domainOrigin);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetDepthClampEnableEXT,
+      VkCommandBuffer commandBuffer, VkBool32 depthClampEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetPolygonModeEXT,
+      VkCommandBuffer commandBuffer, VkPolygonMode polygonMode);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetRasterizationSamplesEXT,
+      VkCommandBuffer commandBuffer, VkSampleCountFlagBits  rasterizationSamples);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetSampleMaskEXT,
+      VkCommandBuffer commandBuffer, VkSampleCountFlagBits  samples, const VkSampleMask*    pSampleMask);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetAlphaToCoverageEnableEXT,
+      VkCommandBuffer commandBuffer, VkBool32 alphaToCoverageEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetAlphaToOneEnableEXT,
+      VkCommandBuffer commandBuffer, VkBool32 alphaToOneEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetLogicOpEnableEXT,
+      VkCommandBuffer commandBuffer, VkBool32 logicOpEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetColorBlendEnableEXT,
+      VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, const VkBool32* pColorBlendEnables);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetColorBlendEquationEXT,
+      VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, const VkColorBlendEquationEXT* pColorBlendEquations);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetColorWriteMaskEXT,
+      VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, const VkColorComponentFlags* pColorWriteMasks);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetRasterizationStreamEXT,
+      VkCommandBuffer commandBuffer, uint32_t rasterizationStream);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetConservativeRasterizationModeEXT,
+      VkCommandBuffer commandBuffer, VkConservativeRasterizationModeEXT conservativeRasterizationMode);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetExtraPrimitiveOverestimationSizeEXT,
+      VkCommandBuffer commandBuffer, float extraPrimitiveOverestimationSize);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetDepthClipEnableEXT,
+      VkCommandBuffer commandBuffer, VkBool32 depthClipEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetSampleLocationsEnableEXT,
+      VkCommandBuffer commandBuffer, VkBool32 sampleLocationsEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetColorBlendAdvancedEXT,
+      VkCommandBuffer commandBuffer, uint32_t firstAttachment, uint32_t attachmentCount, const VkColorBlendAdvancedEXT* pColorBlendAdvanced);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetProvokingVertexModeEXT,
+      VkCommandBuffer commandBuffer, VkProvokingVertexModeEXT provokingVertexMode);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetLineRasterizationModeEXT,
+      VkCommandBuffer commandBuffer, VkLineRasterizationModeEXT lineRasterizationMode);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetLineStippleEnableEXT,
+      VkCommandBuffer commandBuffer, VkBool32 stippledLineEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetDepthClipNegativeOneToOneEXT,
+      VkCommandBuffer commandBuffer, VkBool32 negativeOneToOne);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetViewportWScalingEnableNV,
+      VkCommandBuffer commandBuffer, VkBool32 viewportWScalingEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetViewportSwizzleNV,
+      VkCommandBuffer commandBuffer, uint32_t firstViewport, uint32_t viewportCount, const VkViewportSwizzleNV* pViewportSwizzles);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetCoverageToColorEnableNV,
+      VkCommandBuffer commandBuffer, VkBool32 coverageToColorEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetCoverageToColorLocationNV,
+      VkCommandBuffer commandBuffer, uint32_t coverageToColorLocation);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetCoverageModulationModeNV,
+      VkCommandBuffer commandBuffer, VkCoverageModulationModeNV coverageModulationMode);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetCoverageModulationTableEnableNV,
+      VkCommandBuffer commandBuffer, VkBool32 coverageModulationTableEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetCoverageModulationTableNV,
+      VkCommandBuffer commandBuffer, uint32_t coverageModulationTableCount, const float* pCoverageModulationTable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetShadingRateImageEnableNV,
+      VkCommandBuffer commandBuffer, VkBool32 shadingRateImageEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetRepresentativeFragmentTestEnableNV,
+      VkCommandBuffer commandBuffer, VkBool32 representativeFragmentTestEnable);
+  IMPLEMENT_FUNCTION_SERIALISED(void, vkCmdSetCoverageReductionModeNV,
+      VkCommandBuffer commandBuffer, VkCoverageReductionModeNV coverageReductionMode);
 
   // VK_EXT_vertex_input_dynamic_state
 

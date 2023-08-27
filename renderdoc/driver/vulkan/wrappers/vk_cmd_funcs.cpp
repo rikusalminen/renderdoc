@@ -3269,6 +3269,9 @@ bool WrappedVulkan::Serialise_vkCmdBindPipeline(SerialiserType &ser, VkCommandBu
             {
               renderstate.rastDiscardEnable = pipeInfo.rasterizerDiscardEnable;
             }
+
+            // TODO: add VK_EXT_extended_dynamic_state3 here
+
             if(!pipeInfo.dynamicStates[VkDynamicVertexInputEXT])
             {
               renderstate.vertexAttributes.resize(pipeInfo.vertexAttrs.size());

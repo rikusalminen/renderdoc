@@ -684,6 +684,8 @@ SERIALISE_VK_HANDLES();
   /* VK_EXT_extended_dynamic_state2 */                                                                 \
   PNEXT_STRUCT(VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_2_FEATURES_EXT,                \
                VkPhysicalDeviceExtendedDynamicState2FeaturesEXT)                                       \
+
+  /* TODO: Add VK_EXT_extended_dynamic_state3 here */
                                                                                                        \
   /* VK_EXT_filter_cubic */                                                                            \
   PNEXT_STRUCT(VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_VIEW_IMAGE_FORMAT_INFO_EXT,                     \
